@@ -1,4 +1,4 @@
-/ sum of array element
+/ sum of array elements
 #include <iostream>
 using namespace std;
 
