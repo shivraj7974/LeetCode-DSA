@@ -1,0 +1,28 @@
+class Solution {
+  public:
+  
+   void fun(int i,int j,vector<long long int> &arr){
+        if(i>=j)
+            return;
+        swap(arr[i],arr[j]);
+        fun(i+1,j-1,arr);
+        return;
+        
+    }
+    
+    void reverseInGroups(vector<long long int> &arr, int k) {
+        // code here
+       int i=0;
+        int j=0;
+        int n=arr.size();
+        
+        while(i<n){
+            j=min(n-1,i+k-1);
+            fun(i,j,arr);
+        
+            i+=k;
+        }
+        return; 
+    }
+    
+};
