@@ -1,0 +1,14 @@
+ class Solution {
+  public:
+    vector<int> getMoreAndLess(vector<int> &arr, int x) {
+        // code here
+        int val1=0,val2=0;
+        for(int i=0; i<arr.size(); i++){
+            if(arr[i]<=x)
+            val1++;
+            if(arr[i]>=x)
+            val2++;
+        }
+        return {val1,val2};
+    }
+};
