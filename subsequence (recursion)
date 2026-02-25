@@ -1,0 +1,13 @@
+// print all subsequence
+static void subseq(int i,int[] arr,List<Integer> list){
+    if(i==arr.length){
+        System.out.println(list);
+        return;
+    }
+
+    list.add(arr[i]);
+    subseq(i+1,arr,list);
+
+    list.remove(list.size()-1);
+    subseq(i+1,arr,list);
+}
