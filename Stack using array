@@ -1,0 +1,83 @@
+1️⃣ What is Stack?
+2️⃣ Implementation of Stack
+   - Using Array
+   - Using Linked List
+   - Using Java Inbuilt Stack
+3️⃣ Basic Operations
+4️⃣ Important Patterns (VERY IMPORTANT FOR INTERVIEWS)
+   - Reversal Pattern
+   - Parenthesis Pattern
+   - Monotonic Stack Pattern
+   - Next Greater / Smaller Pattern
+   - Stock Span Pattern
+   - Expression Evaluation Pattern
+5️⃣ Advanced Applications
+6️⃣ Time & Space Complexity
+
+
+Operation	Meaning
+push()	Insert element
+pop()	Remove element
+peek()	See top element
+isEmpty()	Check empty
+isFull()	Check full (for array)
+
+// stack implementation using array 
+
+class StackArray {
+    int[] arr;
+    int top;
+    int capacity;
+
+    StackArray(int size) {
+        capacity = size;
+        arr = new int[size];
+        top = -1;
+    }
+
+    void push(int x) {
+        if (top == capacity - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        arr[++top] = x;
+    }
+
+    int pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        return arr[top--];
+    }
+
+    int peek() {
+        if (top == -1) {
+            System.out.println("Stack Empty");
+            return -1;
+        }
+        return arr[top];
+    }
+
+    boolean isEmpty() {
+        return top == -1;
+    }
+}
+
+
+// stack using java inbuild function
+
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+
+        System.out.println(stack.pop());  // 30
+        System.out.println(stack.peek()); // 20
+    }
+}
