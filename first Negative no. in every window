@@ -1,0 +1,33 @@
+import java.util.*;
+
+class FirstNegative {
+    public static void main(String[] args) {
+
+        int[] arr = {12, -1, -7, 8, -15, 30, 16, 28};
+        int k = 3;
+
+        Deque<Integer> dq = new LinkedList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+
+            // Remove out of window indices
+            if (!dq.isEmpty() && dq.peekFirst() == i - k) {
+                dq.removeFirst();
+            }
+
+            // Add current index if negative
+            if (arr[i] < 0) {
+                dq.addLast(i);
+            }
+
+            // When window is formed
+            if (i >= k - 1) {
+                if (dq.isEmpty()) {
+                    System.out.print("0 ");
+                } else {
+                    System.out.print(arr[dq.peekFirst()] + " ");
+                }
+            }
+        }
+    }
+}
